@@ -7,6 +7,8 @@
 // Mainly based on the layout proposed by Ilya Birman
 // http://ilyabirman.ru/projects/typography-layout/
 
+// Modified to use IAST symbols by Kos Perun <kosperun@gmail.com>
+
 default partial
 xkb_symbols "base" {
 
@@ -27,7 +29,7 @@ xkb_symbols "base" {
 
     // 2nd keyboard row
     key <AD03> { [ NoSymbol,   NoSymbol,              EuroSign,              NoSymbol ] }; // "e"
-    key <AD04> { [ NoSymbol,   NoSymbol,                 U1E5B,                 U1E5D ] }; // "r" used to be "registered"
+    key <AD04> { [ NoSymbol,   NoSymbol,                 U1E5B,                 U1E5D ] }; // "r"
     key <AD05> { [ NoSymbol,   NoSymbol,                 U1E6D,                 U1E6C ] }; // "t"
     key <AD06> { [ NoSymbol,   NoSymbol,                   yen,              NoSymbol ] }; // "y"
     key <AD07> { [ NoSymbol,   NoSymbol,                 U016B,                 U016A ] }; // "u"
