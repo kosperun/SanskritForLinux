@@ -1,18 +1,18 @@
 Sub BalaramToCyrillicUnicode
 
-Dim numbered(5) As String, accented(5) As String
+Dim balaram(5) As String, unicode(5) As String
 Dim n as long
 Dim oDoc as object, oReplace as object
 
-numbered() = Array(" eva", "ñ", "ä", "é", "ü", "å", "è", "ÿ", "ì", "ï", "ö", "ò", "ë", "ç", "ù", "à", "Ä", "É", "Ü", "Å", "È", "Ì", "Ï", "Ö", "Ò", "Ë", "Ç", "Ñ", "Ù", "a", "b", "c", "d", "e", " e", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "v", "y", "A", "B", "C", "D", "E", " E", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "Y")
+balaram() = Array(" eva", "ñ", "ä", "é", "ü", "å", "è", "ÿ", "ì", "ï", "ö", "ò", "ë", "ç", "ù", "à", "Ä", "É", "Ü", "Å", "È", "Ì", "Ï", "Ö", "Ò", "Ë", "Ç", "Ñ", "Ù", "a", "b", "c", "d", "e", " e", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "v", "y", "A", "B", "C", "D", "E", " E", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "Y")
 
-accented() = Array(" эва", "ш", "ā", "ӣ", "ӯ", "р̣", "р̣̄", "л̣", "н̇", "н̃", "т̣", "д̣", "н̣", "ш́", "х̣", "м̇", "Ā", "Ӣ", "Ӯ", "Р̣", "Р̣̄", "Н̇", "Н̃", "Т̣", "Д̣", "Н̣", "Ш́", "Ш", "Х̣", "а", "б", "ч", "д", "е", "э", "г", "х", "и", "дж", "к", "л", "м", "н", "о", "п", "р", "с", "т", "у", "в", "й", "А", "Б", "Ч", "Д", "Е", " Э", "Г", "Х", "И", "Дж", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "В", "Й")
+unicode() = Array(" эва", "ш", "ā", "ӣ", "ӯ", "р̣", "р̣̄", "л̣", "н̇", "н̃", "т̣", "д̣", "н̣", "ш́", "х̣", "м̇", "Ā", "Ӣ", "Ӯ", "Р̣", "Р̣̄", "Н̇", "Н̃", "Т̣", "Д̣", "Н̣", "Ш́", "Ш", "Х̣", "а", "б", "ч", "д", "е", "э", "г", "х", "и", "дж", "к", "л", "м", "н", "о", "п", "р", "с", "т", "у", "в", "й", "А", "Б", "Ч", "Д", "Е", " Э", "Г", "Х", "И", "Дж", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "В", "Й")
 
 oReplace = ThisComponent.createReplaceDescriptor()
-For n = LBound(numbered()) To UBound(accented())
+For n = LBound(balaram()) To UBound(unicode())
 oReplace.SearchCaseSensitive = True
-oReplace.SearchString = numbered(n)
-oReplace.ReplaceString = accented(n)
+oReplace.SearchString = balaram(n)
+oReplace.ReplaceString = unicode(n)
 ThisComponent.ReplaceAll(oReplace)
 Next n
 End Sub
