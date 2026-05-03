@@ -93,12 +93,28 @@ For i = 0 To UBound(asp())
 Next i
 End Sub
 
-Sub CyrillicUnicodeToBalaram
+Sub RussianCyrillicToBalaram
 Dim inp() As String, out() As String
 Dim n As Long
 Dim oReplace As Object
 inp() = Array("дж","Дж","ш́","а̄","ӣ","ӯ","р̣","р̣̄","л̣","н̇","н̃","т̣","д̣","н̣","х̣","м̇","а","б","ч","д","е","г","х","и","к","л","м","н","о","п","р","с","т","у","в","й","ш")
 out() = Array("j","J","ç","ä","é","ü","å","è","ÿ","ì","ï","ö","ò","ë","ù","à","a","b","c","d","e","g","h","i","k","l","m","n","o","p","r","s","t","u","v","y","ñ")
+oReplace = ThisComponent.createReplaceDescriptor()
+oReplace.SearchCaseSensitive = True
+oReplace.SearchRegularExpression = False
+For n = 0 To UBound(inp())
+    oReplace.SearchString = inp(n)
+    oReplace.ReplaceString = out(n)
+    ThisComponent.ReplaceAll(oReplace)
+Next n
+End Sub
+
+Sub UkrainianCyrillicToBalaram
+Dim inp() As String, out() As String
+Dim n As Long
+Dim oReplace As Object
+inp() = Array("дж","Дж","ш́","а̄","ī","ӯ","р̣","р̣̄","л̣","н̇","н̃","т̣","д̣","н̣","х̣","м̇","кг","ґг","чг","жг","тг","дг","пг","бг","Кг","Ґг","Чг","Жг","Тг","Дг","Пг","Бг","а","б","ч","д","е","ґ","г","х","і","к","л","м","н","о","п","р","с","т","у","в","й","ш")
+out() = Array("j","J","ç","ä","é","ü","å","è","ÿ","ì","ï","ö","ò","ë","ù","à","kh","gh","ch","jh","th","dh","ph","bh","Kh","Gh","Ch","Jh","Th","Dh","Ph","Bh","a","b","c","d","e","g","h","h","i","k","l","m","n","o","p","r","s","t","u","v","y","ñ")
 oReplace = ThisComponent.createReplaceDescriptor()
 oReplace.SearchCaseSensitive = True
 oReplace.SearchRegularExpression = False
