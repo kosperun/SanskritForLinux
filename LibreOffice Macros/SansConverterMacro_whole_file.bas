@@ -187,4 +187,3 @@ For n = 0 To UBound(inp())
     ThisComponent.ReplaceAll(oReplace)
 Next n
 End Sub
-
